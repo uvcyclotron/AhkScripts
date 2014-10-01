@@ -175,20 +175,42 @@ return
 }
 }
 
-;Only iTunes 
 if Key=;
 {
 IfWinExist, ahk_class iTunes
+{
+ControlSend, ahk_parent, ^{UP}  ; vol up
+ControlSend, ahk_parent, ^{UP}  ; vol up
 ControlSend, ahk_parent, ^{UP}  ; vol up
 return
 }
 
-;Only iTunes 
+IfWinExist, ahk_class SpotifyMainWindow
+{
+ControlSend, ahk_parent, ^{UP}  ; vol up
+ControlSend, ahk_parent, ^{UP}  ; vol up
+ControlSend, ahk_parent, ^{UP}  ; vol up
+return
+}
+}
+
 if Key='
 {
 IfWinExist, ahk_class iTunes
+{
+ControlSend, ahk_parent, ^{DOWN}  ; vol down
+ControlSend, ahk_parent, ^{DOWN}  ; vol down
 ControlSend, ahk_parent, ^{DOWN}  ; vol down
 return
+}
+
+IfWinExist, ahk_class SpotifyMainWindow
+{
+ControlSend, ahk_parent, ^{DOWN}  ; vol down
+ControlSend, ahk_parent, ^{DOWN}  ; vol down
+ControlSend, ahk_parent, ^{DOWN}  ; vol down
+return
+}
 }
 
 
